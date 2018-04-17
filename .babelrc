@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["chrome >= 56"]
+      },
+      "useBuiltIns": true
+    }],
+    "es2015",
+    "react"
+  ]
+}

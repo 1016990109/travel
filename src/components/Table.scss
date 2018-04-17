@@ -1,0 +1,27 @@
+:local(.table) {
+  border-collapse:collapse;
+
+  :local(.thead) {
+    tr, th {
+      padding: 6px 10px;
+      word-break: break-all;
+      text-align: left;
+    }
+
+    tr > th {
+      font-weight: bold;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    & > tr:first-child > th:first-child {
+      border-top-left-radius: 4px;
+    }
+  }
+
+  :local(.tbody) {
+    tr > td {
+      padding: 6px 10px;
+      word-break: break-all;
+    }
+  }
+}

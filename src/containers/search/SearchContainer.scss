@@ -1,0 +1,107 @@
+:local(.container) {
+  :local(.searchContainer) {
+    padding-top: 20px;
+
+    :local(.left), :local(.right) {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    :local(.item) {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+
+      :local(.condition) {
+        display: inline-block;
+        flex: 0 0 100px;
+      }
+
+      :local(.select) {
+        flex: 1 1 auto;
+        margin-right: 50px;
+      }
+
+      input, select {
+        flex: 1 1 auto;
+        margin-right: 50px;
+        border-radius: 3px;
+        outline: none;
+        border: 1px solid #cccccc;
+        padding: 5px;
+      }
+
+      :local(.inputNumber) {
+        margin: 0;
+        width: 30%;
+      }
+
+      :local(.inputNumberSep) {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  :local(.btnContainer) {
+    margin-top: 10px;
+
+    :local(.btn) {
+      margin-right: 20px;
+    }
+  }
+
+  :local(.btn) {
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  :local(.ghost) {
+    color: black;
+    background-color: white;
+    border: 1px solid #cccccc;
+  }
+
+  :local(.green) {
+    color: white;
+    background-color: green;
+  }
+
+  :local(.blue) {
+    color: white;
+    background-color: blue;
+  }
+
+  :local(.red) {
+    color: white;
+    background-color: red;
+  }
+
+  :local(.table) {
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+
+    :local(.operations) {
+      :local(.ghost) {
+        padding: 4px 6px;
+        font-size: 12px;
+        outline: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-right: 10px;
+
+        &:hover {
+          background-color: #fafafa;
+        }
+      }
+    }
+  }
+}

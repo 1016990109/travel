@@ -1,0 +1,42 @@
+:local(.container) {
+  :local(.nav) {
+    float: left;
+    list-style: none;
+    width: 100px;
+    padding: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+
+    li {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      :local(.active) {
+          &:link {
+            color: blue;
+          }
+
+          &:visited {
+            color: blue;
+          }
+      }
+
+      a {
+        text-decoration: none;
+
+        &:link {
+          color: black;
+        }
+
+        &:visited {
+          color: black;
+        }
+      }
+    }
+  }
+
+  :local(.content) {
+    margin-left: 130px;
+    margin-ri: 130px;
+  }
+}

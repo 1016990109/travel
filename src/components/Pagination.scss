@@ -1,0 +1,76 @@
+:local(.pagination) {
+  text-align: right;
+
+  :local(.pre), :local(.next) {
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: 4px;
+    outline: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      border-color: #1890ff;
+    }
+
+    &:local(.disable) {
+      cursor: not-allowed;
+      border-color: #e9d9d9;
+
+      &:hover {
+        border-color: #e9d9d9;
+      }
+    }
+  }
+
+  :local(.num) {
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    border-radius: 4px;
+    outline: none;
+    padding: 4px 8px;
+    cursor: pointer;
+    height: 20px;
+    transition: 0.3s;
+
+    &:hover {
+      border-color: #1890ff;
+    }
+
+    &:local(.current) {
+      border-color: #1890ff;
+      font-weight: 500;
+    }
+  }
+
+  :local(.info) {
+    display: inline-block;
+
+    :local(.total) {
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    input {
+      outline: none;
+      border-radius: 4px;
+      padding: 2px;
+      border: 1px solid #d9d9d9;
+    }
+
+    :local(.confirm) {
+      border-radius: 4px;
+      outline: none;
+      background-color: white;
+      border: 1px solid #dcdcdc;
+      cursor: pointer;
+      padding: 2px 4px;
+      transition: 0.3s;
+
+      &:hover {
+        border-color: #1890ff;
+      }
+    }
+  }
+}
