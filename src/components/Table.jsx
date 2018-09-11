@@ -15,7 +15,7 @@ class Table extends React.Component {
     this.getDataSource = this.getDataSource.bind(this)
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps !== this.props) {
       //表格内容数据变化重置页数
       this.setState({

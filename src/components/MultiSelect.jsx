@@ -30,7 +30,7 @@ class MultiSelect extends React.Component {
    * 点击select内容
    * @param e
    */
-  handleSelectClick(e) {
+  handleSelectClick() {
     const {isShow} = this.state
     if (!isShow){
       this.setState({

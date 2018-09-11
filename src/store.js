@@ -2,7 +2,7 @@ import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware, compose } from 'redux'
 import config from './config'
 
-export const createMyStore = function(rootReducer) {
+const createMyStore = function(rootReducer) {
   let middlewares = []
 
   // 开发模式下，打印state变化
@@ -21,3 +21,5 @@ export const createMyStore = function(rootReducer) {
 
   return store
 }
+
+export default createMyStore

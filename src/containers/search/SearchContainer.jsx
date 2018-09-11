@@ -5,6 +5,7 @@ import {Map, List, fromJS} from 'immutable'
 import Select from '../../components/MultiSelect'
 import Table from '../../components/Table'
 import date from '../../utils/date'
+import PropTypes from 'prop-types'
 
 //模拟的初始化数据
 const initialData = (() => {
@@ -49,6 +50,15 @@ const initialState =  {
     end: 1
   })
 }
+
+const OperationComponent = () => (
+  <div className={styles.operations}>
+      <button className={styles.ghost}>编辑</button>
+      <button className={styles.ghost}>发布</button>
+      <button className={styles.ghost}>预览</button>
+      <button className={styles.ghost}>删除</button>
+    </div>
+)
 
 //表格渲染列
 const columns = [{
@@ -109,14 +119,7 @@ const columns = [{
   title: '操作',
   dataIndex: '',
   key: 'option',
-  render: data => (
-    <div className={styles.operations}>
-      <button className={styles.ghost}>编辑</button>
-      <button className={styles.ghost}>发布</button>
-      <button className={styles.ghost}>预览</button>
-      <button className={styles.ghost}>删除</button>
-    </div>
-  )
+  render: OperationComponent
 }]
 
 class SearchContainer extends React.Component {
@@ -289,6 +292,12 @@ SearchContainer.defaultProps = {
   platforms: fromJS([{code: PLATFORM_ALL, name: "全部"}, {code: PLATFORM_MEITUAN, name: "美团"}, {code: PLATFORM_DIANPING, name: "点评"}]),//平台
   journeyTags: List(["经典", "参观博物馆", "美团", "点评", "亲子", "暑假", "情侣"]),//行程标签
   status: fromJS([{code: STATUS_ALL, name: "全部"}, {code: STATUS_OFF, name: "未发布"}, {code: STATUS_ING, name: "进行中"}]),//状态
+}
+
+SearchContainer.propTypes = {
+  platforms: PropTypes.object,
+  journeyTags: PropTypes.object,
+  status: PropTypes.object
 }
 
 export default SearchContainer

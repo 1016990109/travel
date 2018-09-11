@@ -3,6 +3,7 @@ import styles from './FormContainer.scss'
 import classnames from 'classnames'
 import Select from '../../components/MultiSelect'
 import {List, fromJS} from "immutable";
+import PropTypes from 'prop-types'
 
 //名称最小和最大长度
 const NAME_LENGTH_MIN = 5, NAME_LENGTH_MAX = 30
@@ -63,7 +64,7 @@ class FormContainer extends React.Component {
     })
   }
 
-  handleMeituanImgChoose(e) {
+  handleMeituanImgChoose() {
     let file = this.meituanInput.files[0]
     this.handleLoadImg(file, (result) => {
       this.setState({
@@ -307,5 +308,9 @@ FormContainer.defaultProps = {
   destinations:  List(["西班牙", "纽约", "巴黎", "首尔", "奥地利", "日本", "伦敦"]),//目的地
 }
 
+FormContainer.propTypes = {
+  journeyTags: PropTypes.object,
+  destinations: PropTypes.object
+}
 
 export default FormContainer

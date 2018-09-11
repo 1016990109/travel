@@ -31,7 +31,7 @@ function mapStateToProps() {
   return {}
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {}
 }
 
