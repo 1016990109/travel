@@ -1,12 +1,11 @@
 import { createLogger } from 'redux-logger'
 import { createStore, applyMiddleware, compose } from 'redux'
-import config from './config'
 
 const createMyStore = function(rootReducer) {
   let middlewares = []
 
   // 开发模式下，打印state变化
-  if (config.dev) {
+  if (process.env.NODE_ENV === 'development') {
     // middleware that logs the global state for debug
     const loggerMiddleware = createLogger({
       stateTransformer: (state) => {

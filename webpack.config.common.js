@@ -92,7 +92,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: '旅游事业',
       filename: 'index.html',
-      template: 'index.html'
+      template: 'index.html',
+      environment: process.env.NODE_ENV
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
@@ -124,17 +125,5 @@ module.exports = {
         }
       }
     }
-  },
-
-  devServer: {
-    hot: true,
-    port: '8080',
-    disableHostCheck: true,
-    contentBase: path.resolve(__dirname, 'dist'),
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    },
-    historyApiFallback: true
-  },
-  devtool: 'source-map',
+  }
 }

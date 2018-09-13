@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const path = require('path');
 
 let options = {
+  mode: 'production',
 
   output: {
     path: path.resolve(__dirname, 'dist'),

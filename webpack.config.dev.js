@@ -5,6 +5,8 @@ const common = require('./webpack.config.common')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge(common, {
+  mode: 'development',
+
   watch: true,
 
   output: {

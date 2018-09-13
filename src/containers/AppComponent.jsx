@@ -1,11 +1,21 @@
 import React from 'react'
 import {Switch, Route, NavLink, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux';
 import SearchContainer from './search/SearchContainer'
 import FormContainer from './form/FormContainer'
 import styles from './AppComponent.scss'
+import {addJourney} from '../reducer/journey'
+import ImmutablePropTypes from 'react-immutable-proptypes'
+import PropTypes from 'prop-types'
 
 class AppComponent extends React.Component {
+  componentDidMount() {
+    //test redux
+    console.log(this.props.journeyList)
+    this.props.addJourney('test')
+  }
+
   render() {
     return (
       <div className={styles.container}>
@@ -27,12 +37,21 @@ class AppComponent extends React.Component {
   }
 }
 
-function mapStateToProps() {
-  return {}
+AppComponent.propTypes = {
+  addJourney: PropTypes.func.isRequired,
+  journeyList: ImmutablePropTypes.list.isRequired
 }
 
-function mapDispatchToProps() {
-  return {}
+function mapStateToProps(state) {
+  return {
+    journeyList: state.get('journey').get('journeyList')
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    addJourney: bindActionCreators(addJourney, dispatch)
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppComponent)
