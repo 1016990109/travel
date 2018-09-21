@@ -1,13 +1,21 @@
 {
   "presets": [
-    ["env", {
-      "targets": {
-        "browsers": ["> 5% in CN"],
-        "uglify": true
-      },
-      "useBuiltIns": true,
-      "debug": false
-    }],
-    "react"
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": [
+            "> 5% in CN"
+          ],
+          "uglify": true
+        },
+        "useBuiltIns": "entry",
+        "debug": false
+      }
+    ],
+    "@babel/react"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
   ]
 }

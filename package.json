@@ -8,7 +8,9 @@
     "start": "npm run dev",
     "dev": "NODE_ENV=development webpack-dev-server --open --hot --port 8080 --colors --config webpack.config.dev.js",
     "build": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "analyze": "npm_config_report=true npm run build"
+    "analyze": "npm_config_report=true npm run build",
+    "next-start": "next start",
+    "next-build": "rm -rf .next/ && next build"
   },
   "keywords": [
     "front-end"
@@ -16,10 +18,15 @@
   "author": "hcw",
   "license": "ISC",
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
+    "@babel/polyfill": "^7.0.0",
+    "@zeit/next-sass": "^1.0.1",
     "classnames": "^2.2.5",
     "history": "^4.7.2",
     "immutable": "^3.8.2",
+    "next": "^7.0.0",
+    "next-redux-wrapper": "^2.0.0",
+    "next-routes": "^1.4.2",
+    "node-sass": "^4.9.3",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -33,11 +40,11 @@
     "redux-logger": "^3.0.6"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^8.0.1",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "babel-loader": "^8.0.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.10",
     "eslint": "^4.10.0",

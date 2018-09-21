@@ -9,7 +9,7 @@ module.exports = {
   target: 'web',
 
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     './src/client.jsx'
   ],
 

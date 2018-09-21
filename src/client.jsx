@@ -1,7 +1,7 @@
 import React from 'react'
 import reducer from './reducer'
 import createMyStore from './store'
-import routes from './routes'
+import routes from './routes.jsx'
 import {Provider} from 'react-redux'
 import ReactDOM from 'react-dom'
 import './common.scss'
